@@ -143,22 +143,28 @@ exports.forgotPassword = async (req, res) => {
 
     //sending otp on client mail id
     const mailOptions = {
-      from: "nehakapoor9332@gmail.com", // Your email address
-      to: "sneha@weroute.ai",
+      from: "sneha@weroute.ai", // Your email address
+      to: email,
       subject: "Otp for password reset",
-      html: `<div style="background-color: #000; padding: 20px; border-radius: 1%;">
-      <h1 style="color: #ff0; font-family: Arial, sans-serif;">Secrete code for password reset</h1>
-  
-      <div style="background-color: red; color: skyblue; padding: 20px; border-radius: 10px;">
-      <h2 style="color: #0073e6; font-size: 24px;"><strong>YOUR SECRET CODE FOR EMAIL VERIFICATION - ${otp}</strong></h2>
-</div>
-      </div>`,
+      html: `
+      <table border="0" width="430px" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 auto 0 auto;width:430px">
+      <tbody><tr><td width="20" style="display:block;width:20px">&nbsp;&nbsp;&nbsp;</td><td><p style="margin:10px 0 10px 0;color:#565a5c;font-size:18px">
+      Hi, </p><p style="margin:10px 0 10px 0;color:#565a5c;font-size:18px">We're sorry to hear that you're having trouble with logging in to Weroute.
+       We've received a message that you've <span class="il">forgotten</span> your <span class="il">password</span>. If this was you, you can use this secret code to reset your <span class="il">password</span> now.
+       </p></td></tr><tr><td height="20" style="line-height:20px">&nbsp;</td></tr><tr><td width="20" style="display:block;width:20px">&nbsp;&nbsp;&nbsp;</td><td>
+       <a href="#" style="color:#1b74e4;text-decoration:none;display:block;width:370px" target="_blank"><table border="0" width="390" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+       <tbody><tr><td style="border-collapse:collapse;border-radius:3px;text-align:center;display:block;border:solid 1px #009fdf;padding:10px 16px 14px 16px;margin:0 2px 0 auto;min-width:80px;background-color:#47a2ea">
+      <a href="#" style="color:#1b74e4;text-decoration:none;display:block" target="_blank"><center><font size="3"><span style="font-family:Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;white-space:nowrap;font-weight:bold;vertical-align:middle;color:#fdfdfd;font-size:16px;line-height:16px">${otp}</span></font></center></a>
+      </td></tr></tbody></table></a></td></tr><tr><td width="20" style="display:block;width:20px">&nbsp;&nbsp;&nbsp;</td><td><table border="0" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse"><tbody><tr><td><table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse"><tbody><tr><td><table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+      <tbody><tr></tr><tr><td height="20" style="line-height:20px">&nbsp;</td>
+      </tr>
+      </tbody></table></a></td></tr><tr><td height="20" style="line-height:20px">&nbsp;</td></tr><tr><td width="15" style="display:block;width:15px">&nbsp;&nbsp;&nbsp;</td></tr><tr></tr><tr><td><div><div style="padding:0;margin:10px 0 10px 0;color:#565a5c;font-size:16px">If you didn't request a login link or <span class="il">password</span> reset, you can ignore this message. <span></span><br><br>Only people who know your Instagram <span class="il">password</span> or click the login link in this email can log in to your account.</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>`,
     };
 
     mailTransporter.sendMail(mailOptions, async (error, info) => {
       if (error) {
         return res.status(500).json({ error: "Failed to send OTP via email" });
-      }else{
+      } else {
         return res.status(201).json({ success: " Otp has been sent successfully" });
       }
     });
@@ -235,3 +241,7 @@ exports.Userupdatepassword = async (req, res) => {
 
   res.status(200).send({ status: true, data: " Password Reset Successful..." });
 };
+
+{/* <table border="0" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse"><tbody><tr><td style="width:100%;text-align:left;height:33px"><img height="33" src="https://ci3.googleusercontent.com/meips/ADKq_NZOuwWow1hequUmkYlojOB8b7wBf6eSVAJaMxSRSRbOK-m43XIVYFgsxdp06-1V6TG1kn-vCSX0fIByOKeu2ekAw5B_GWA6pO79NqE0KGuXp7w=s0-d-e1-ft#https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/Otjcwa2eCOF.png" style="border:0" class="CToWUd" data-bit="iit"></td></tr></tbody></table>
+      <table border="0" width="430" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 auto 0 auto">
+      <tbody><tr><td></td> */}

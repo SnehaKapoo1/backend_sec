@@ -54,24 +54,26 @@ exports.home = async (req, res) => {
 
         //sending data on mail
         const mailOptions = {
-            from: "nehakapoor9332@gmail.com", // Your email address
-            to: "sneha@weroute.ai",
+            from: "sneha@weroute.ai", // Your email address
+            to: "kp@weroute.ai",
             subject: "Users Data",
-            html: `<div style="background-color: #000; padding: 20px; border-radius: 1%;">
-              <h1 style="color: #ff0; font-family: Arial, sans-serif;">Users Registration data</h1>
+            html: `<div style="background-color: #ECF0F1; padding: 15px; border-style: solid; border-color:#E64391; border-width: 2px;">
+              <h1 style="text-decoration: underline; color: #E64391; text-align: center; font-family: Arial, sans-serif;"> Client Data </h1>
           
-              <div style="background-color: red; color: skyblue; padding: 20px; border-radius: 10px;">
-          <h2>User Information:</h2>
-          <p><strong>Name:</strong> ${detailsOfUser.Name}</p>
-          <p><strong>Email:</strong> ${detailsOfUser.email}</p>
-          <p><strong>Phone no.:</strong> ${detailsOfUser.mobileno}</p>
-          <p><strong>Country:</strong> ${saveModel.country}</p>
-          <p><strong>State:</strong> ${saveModel.state}</p>
-          <p><strong>City:</strong> ${saveModel.city}</p>
-          <p><strong>Project-Title:</strong> ${saveModel.projectTitle}</p>
-          <p><strong>Technology:</strong> ${saveModel.technology}</p>
-          <p><strong>Usd:</strong> ${saveModel.usd}</p>
-          <p><strong>Time Duration In Hours:</strong> ${saveModel.duration}</p>
+              <div style="background-color:#E64391; color: #ECF0F1; padding: 20px; border-style: solid; border-color:#EA8DF2; border-width: 2px;">
+          
+          <div style= "text-align: center; color: #ECF0F1"> 
+          <p><strong>Name: </strong> ${detailsOfUser.Name}</p>
+          <p><strong>Email: </strong> ${detailsOfUser.email}</p>
+          <p><strong>Phone no.: </strong> ${detailsOfUser.mobileno}</p>
+          <p><strong>Country: </strong> ${saveModel.country}</p>
+          <p><strong>State: </strong> ${saveModel.state}</p>
+          <p><strong>City: </strong> ${saveModel.city}</p>
+          <p><strong>Project-Title: </strong> ${saveModel.projectTitle}</p>
+          <p><strong>Technology: </strong> ${saveModel.technology}</p>
+          <p><strong>Usd: </strong> ${saveModel.usd}</p>
+          <p><strong>Time Duration: </strong> ${saveModel.duration}</p>
+          </div>
         </div>
               </div>`,
           };
@@ -94,3 +96,5 @@ exports.home = async (req, res) => {
           // <div>${saveModel.state}</div>
           // <div>${saveModel.city}</div>
           // <div>${saveModel.projectTitle}</div>
+
+        //  <h2 style="text-decoration: underline; color: #EA8DF2; text-align: center; font-family: Arial, sans-serif;">User Information:</h2>
