@@ -40,27 +40,27 @@ exports.signUp = async (req, res) => {
     };
 
     //Send the OTP via email
-    const mailOptions = {
-      from: "nehakapoor9332@gmail.com", // Your email address
-      to: "sneha@weroute.ai",
-      subject: "Users Data",
-      html: `<div style="background-color: #000; padding: 20px; border-radius: 1%;">
-        <h1 style="color: #ff0; font-family: Arial, sans-serif;">Users Registration data</h1>
+  //   const mailOptions = {
+  //     from: "nehakapoor9332@gmail.com", // Your email address
+  //     to: "sneha@weroute.ai",
+  //     subject: "Users Data",
+  //     html: `<div style="background-color: #000; padding: 20px; border-radius: 1%;">
+  //       <h1 style="color: #ff0; font-family: Arial, sans-serif;">Users Registration data</h1>
     
-        <div style="background-color: red; color: skyblue; padding: 20px; border-radius: 10px;">
-    <h2>User Information:</h2>
-    <p><strong>Name:</strong> ${result.Name}</p>
-    <p><strong>Email -:</strong> ${result.email}</p>
-    <p><strong>Phone no. -:</strong> ${result.mobileno}</p>
-  </div>
-        </div>`,
-    };
+  //       <div style="background-color: red; color: skyblue; padding: 20px; border-radius: 10px;">
+  //   <h2>User Information:</h2>
+  //   <p><strong>Name:</strong> ${result.Name}</p>
+  //   <p><strong>Email -:</strong> ${result.email}</p>
+  //   <p><strong>Phone no. -:</strong> ${result.mobileno}</p>
+  // </div>
+  //       </div>`,
+  //   };
 
-    mailTransporter.sendMail(mailOptions, async (error, info) => {
-      if (error) {
-        return res.status(500).json({ error: "Failed to send OTP via email" });
-      }
-    });
+  //   mailTransporter.sendMail(mailOptions, async (error, info) => {
+  //     if (error) {
+  //       return res.status(500).json({ error: "Failed to send OTP via email" });
+  //     }
+  //   });
 
     // Omit sensitive information from the response
     const User = await UserModel.findOne({ mobileno }).select({
@@ -241,7 +241,3 @@ exports.Userupdatepassword = async (req, res) => {
 
   res.status(200).send({ status: true, data: " Password Reset Successful..." });
 };
-
-{/* <table border="0" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse"><tbody><tr><td style="width:100%;text-align:left;height:33px"><img height="33" src="https://ci3.googleusercontent.com/meips/ADKq_NZOuwWow1hequUmkYlojOB8b7wBf6eSVAJaMxSRSRbOK-m43XIVYFgsxdp06-1V6TG1kn-vCSX0fIByOKeu2ekAw5B_GWA6pO79NqE0KGuXp7w=s0-d-e1-ft#https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/Otjcwa2eCOF.png" style="border:0" class="CToWUd" data-bit="iit"></td></tr></tbody></table>
-      <table border="0" width="430" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 auto 0 auto">
-      <tbody><tr><td></td> */}
