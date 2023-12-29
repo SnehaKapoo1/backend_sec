@@ -145,7 +145,7 @@ exports.forgotPassword = async (req, res) => {
     const mailOptions = {
       from: "sneha@weroute.ai", // Your email address
       to: email,
-      subject: "Otp for password reset",
+      subject: "Hey, we've made it easy to get back to Weroute",
       html: `
       <table border="0" width="430px" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 auto 0 auto;width:430px">
       <tbody><tr><td width="20" style="display:block;width:20px">&nbsp;&nbsp;&nbsp;</td><td><p style="margin:10px 0 10px 0;color:#565a5c;font-size:18px">
@@ -158,7 +158,8 @@ exports.forgotPassword = async (req, res) => {
       </td></tr></tbody></table></a></td></tr><tr><td width="20" style="display:block;width:20px">&nbsp;&nbsp;&nbsp;</td><td><table border="0" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse"><tbody><tr><td><table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse"><tbody><tr><td><table border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
       <tbody><tr></tr><tr><td height="20" style="line-height:20px">&nbsp;</td>
       </tr>
-      </tbody></table></a></td></tr><tr><td height="20" style="line-height:20px">&nbsp;</td></tr><tr><td width="15" style="display:block;width:15px">&nbsp;&nbsp;&nbsp;</td></tr><tr></tr><tr><td><div><div style="padding:0;margin:10px 0 10px 0;color:#565a5c;font-size:16px">If you didn't request a login link or <span class="il">password</span> reset, you can ignore this message. <span></span><br><br>Only people who know your Instagram <span class="il">password</span> or click the login link in this email can log in to your account.</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>`,
+      </tbody></table></a></td></tr><tr><td height="20" style="line-height:20px">&nbsp;</td></tr><tr><td width="15" style="display:block;width:15px">&nbsp;&nbsp;&nbsp;</td></tr><tr></tr><tr><td><div><div style="padding:0;margin:10px 0 10px 0;color:#565a5c;font-size:16px">If you didn't request a login link or <span class="il">password</span> reset, you can ignore this message. <span></span><br><br>Only people who know your Weroute <span class="il">password,
+      </span> can use the security code of this email can log in to your account.</td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table>`,
     };
 
     mailTransporter.sendMail(mailOptions, async (error, info) => {
